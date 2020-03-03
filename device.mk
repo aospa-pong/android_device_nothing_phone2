@@ -74,9 +74,6 @@ PRODUCT_PACKAGES += \
 # FM
 BOARD_HAVE_QCOM_FM := false
 
-# GSI
-$(call inherit-product, build/make/target/product/gsi_keys.mk)
-
 # Image Generation Tool
 TARGET_USES_IMAGE_GEN_TOOL := true
 

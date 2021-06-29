@@ -368,8 +368,9 @@ TARGET_USES_IMAGE_GEN_TOOL := true
 # QCV allows multiple chipsets to be supported on a single vendor.
 # Add vintf device manifests for chipsets in taro QCV family below.
 TARGET_USES_QCV := true
-DEVICE_MANIFEST_SKUS := taro
+DEVICE_MANIFEST_SKUS := taro diwali
 DEVICE_MANIFEST_TARO_FILES := device/qcom/taro/manifest_taro.xml
+DEVICE_MANIFEST_DIWALI_FILES := device/qcom/taro/manifest_diwali.xml
 
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 

@@ -421,32 +421,10 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 BOARD_SYSTEMSDK_VERSIONS := 31
 
-DISABLED_VSDK_SNAPSHOTS_LIST := $(subst $(comma),$(space),$(DISABLED_VSDK_SNAPSHOTS))
-
 ifeq (true,$(BUILDING_WITH_VSDK))
     ALLOW_MISSING_DEPENDENCIES := true
     TARGET_SKIP_CURRENT_VNDK := true
-
-    ifneq (,$(filter vendor,$(DISABLED_VSDK_SNAPSHOTS_LIST)))
-        # Vendor snapshot is disabled with VSDK
-        BOARD_VNDK_VERSION := current
-    else
-        BOARD_VNDK_VERSION := 31
-    endif
-
-    ifneq (,$(filter recovery,$(DISABLED_VSDK_SNAPSHOTS_LIST)))
-        # Recovery snapshot is disabled with VSDK
-        RECOVERY_SNAPSHOT_VERSION := current
-    else
-        RECOVERY_SNAPSHOT_VERSION := 31
-    endif
-
-    ifneq (,$(filter ramdisk,$(DISABLED_VSDK_SNAPSHOTS_LIST)))
-        # Ramdisk snapshot is disabled with VSDK
-        RAMDISK_SNAPSHOT_VERSION := current
-    else
-        RAMDISK_SNAPSHOT_VERSION := 31
-    endif
+    -include vendor/qcom/vsdk_snapshots_config/config.mk
 else
     BOARD_VNDK_VERSION := current
     RECOVERY_SNAPSHOT_VERSION := current

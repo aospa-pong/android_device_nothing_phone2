@@ -4,8 +4,6 @@ TARGET_BOOTLOADER_BOARD_NAME := taro
 
 BUILD_BROKEN_DUP_RULES := true
 
-RELAX_USES_LIBRARY_CHECK := true
-
 # Default Android A/B configuration
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)

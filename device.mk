@@ -29,16 +29,13 @@ BOARD_API_LEVEL := 31
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=QTI
 
-# For QSSI builds, we should skip building the system image. Instead we build the
-# "non-system" images (that we support).
-
-PRODUCT_BUILD_SYSTEM_IMAGE := false
+PRODUCT_BUILD_SYSTEM_IMAGE := true
 PRODUCT_BUILD_SYSTEM_OTHER_IMAGE := false
 PRODUCT_BUILD_VENDOR_IMAGE := true
 PRODUCT_BUILD_VENDOR_DLKM_IMAGE := true
-PRODUCT_BUILD_PRODUCT_IMAGE := false
-PRODUCT_BUILD_SYSTEM_EXT_IMAGE := false
-PRODUCT_BUILD_ODM_IMAGE := false
+PRODUCT_BUILD_PRODUCT_IMAGE := true
+PRODUCT_BUILD_SYSTEM_EXT_IMAGE := true
+PRODUCT_BUILD_ODM_IMAGE := true
 PRODUCT_BUILD_CACHE_IMAGE := false
 PRODUCT_BUILD_RAMDISK_IMAGE := true
 PRODUCT_BUILD_RECOVERY_IMAGE := true
@@ -57,9 +54,6 @@ BOARD_ABL_SIMPLE := false
 else
 BOARD_ABL_SIMPLE := true
 endif
-
-# Set SYSTEMEXT_SEPARATE_PARTITION_ENABLE if was not already set (set earlier via build.sh).
-SYSTEMEXT_SEPARATE_PARTITION_ENABLE := true
 
 #Suppot to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
@@ -94,12 +88,8 @@ PRODUCT_PACKAGES += fastbootd
 # Add default implementation of fastboot HAL.
 PRODUCT_PACKAGES += android.hardware.fastboot@1.1-impl-mock
 
-ifeq ($(SYSTEMEXT_SEPARATE_PARTITION_ENABLE), true)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
-else
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/fstab_noSysext.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
-endif
-BOARD_AVB_VBMETA_SYSTEM := system
+BOARD_AVB_VBMETA_SYSTEM := system system_ext product
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)

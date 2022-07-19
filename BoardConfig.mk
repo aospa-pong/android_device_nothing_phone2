@@ -141,8 +141,6 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 
 #Disable appended dtb.
 TARGET_KERNEL_APPEND_DTB := false
-# Compile without full kernel source
-TARGET_COMPILE_WITH_MSM_KERNEL := false
 
 #Enable dtb in boot image and boot image header version 3 support.
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true

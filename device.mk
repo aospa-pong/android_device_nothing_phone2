@@ -334,7 +334,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/ueventd-odm.rc:$(TARGET_COPY_OUT_ODM)/uevent
 PRODUCT_PACKAGES += vmmgr vmmgr.rc vmmgr.conf
 endif
 
-
 ##Armv9-Tests##
 PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \
                           pac_test \
@@ -348,14 +347,3 @@ PRODUCT_VENDOR_PROPERTIES+= \
 
 # GPU Profiler support
 PRODUCT_VENDOR_PROPERTIES += graphics.gpu.profiler.support=true
-
-###################################################################################
-# This is the End of target.mk file.
-# Now, Pickup other split product.mk files:
-###################################################################################
-# TODO: Relocate the system product.mk files pickup into qssi lunch, once it is up.
-$(foreach sdefs, $(sort $(wildcard vendor/qcom/defs/product-defs/system/*.mk)), \
-    $(call inherit-product, $(sdefs)))
-$(foreach vdefs, $(sort $(wildcard vendor/qcom/defs/product-defs/vendor/*.mk)), \
-    $(call inherit-product, $(vdefs)))
-###################################################################################

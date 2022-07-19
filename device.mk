@@ -148,9 +148,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 BOARD_FRP_PARTITION_NAME := frp
 
-# Android EGL implementation
-PRODUCT_PACKAGES += libGLES_android
-
 PRODUCT_PACKAGES += fs_config_files
 PRODUCT_PACKAGES += gpio-keys.kl
 

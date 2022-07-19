@@ -14,11 +14,6 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 #Enable vm support
 TARGET_ENABLE_VM_SUPPORT := true
 
-# true: earlycon and console enabled
-# false: console explicitly disabled
-# <empty>: default from kernel
-TARGET_CONSOLE_ENABLED ?=
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Set GRF/Vendor freeze properties

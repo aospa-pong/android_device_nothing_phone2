@@ -63,87 +63,8 @@ endif
 # Set SYSTEMEXT_SEPARATE_PARTITION_ENABLE if was not already set (set earlier via build.sh).
 SYSTEMEXT_SEPARATE_PARTITION_ENABLE := true
 
-###########
-#QMAA flags starts
-###########
-#QMAA global flag for modular architecture
-#true means QMAA is enabled for system
-#false means QMAA is disabled for system
-
-TARGET_USES_QMAA := false
-
-#QMAA flag which is set to incorporate any generic dependencies
-#required for the boot to UI flow in a QMAA enabled target.
-#Set to false when all target level depenencies are met with
-#actual full blown implementations.
-TARGET_USES_QMAA_RECOMMENDED_BOOT_CONFIG := false
-
-#QMAA tech team flag to override global QMAA per tech team
-#true means overriding global QMAA for this tech area
-#false means using global, no override
-TARGET_USES_QMAA_OVERRIDE_RPMB := true
-TARGET_USES_QMAA_OVERRIDE_DISPLAY := true
-TARGET_USES_QMAA_OVERRIDE_AUDIO   := true
-TARGET_USES_QMAA_OVERRIDE_VIDEO   := true
-TARGET_USES_QMAA_OVERRIDE_CAMERA  := true
-TARGET_USES_QMAA_OVERRIDE_GFX     := true
-TARGET_USES_QMAA_OVERRIDE_WFD     := true
-TARGET_USES_QMAA_OVERRIDE_GPS     := true
-TARGET_USES_QMAA_OVERRIDE_ANDROID_RECOVERY := true
-TARGET_USES_QMAA_OVERRIDE_ANDROID_CORE := true
-TARGET_USES_QMAA_OVERRIDE_WLAN    := true
-TARGET_USES_QMAA_OVERRIDE_DPM  := true
-TARGET_USES_QMAA_OVERRIDE_BLUETOOTH   := true
-TARGET_USES_QMAA_OVERRIDE_FM  := true
-TARGET_USES_QMAA_OVERRIDE_CVP  := true
-TARGET_USES_QMAA_OVERRIDE_FASTCV  := true
-TARGET_USES_QMAA_OVERRIDE_SCVE  := true
-TARGET_USES_QMAA_OVERRIDE_OPENVX  := true
-TARGET_USES_QMAA_OVERRIDE_DIAG := true
-TARGET_USES_QMAA_OVERRIDE_FTM := true
-TARGET_USES_QMAA_OVERRIDE_DATA := true
-TARGET_USES_QMAA_OVERRIDE_DATA_NET := true
-TARGET_USES_QMAA_OVERRIDE_MSM_BUS_MODULE := true
-TARGET_USES_QMAA_OVERRIDE_KERNEL_TESTS_INTERNAL := true
-TARGET_USES_QMAA_OVERRIDE_MSMIRQBALANCE := true
-TARGET_USES_QMAA_OVERRIDE_VIBRATOR := true
-TARGET_USES_QMAA_OVERRIDE_DRM     := true
-TARGET_USES_QMAA_OVERRIDE_KMGK := true
-TARGET_USES_QMAA_OVERRIDE_VPP := true
-TARGET_USES_QMAA_OVERRIDE_GP := true
-TARGET_USES_QMAA_OVERRIDE_BIOMETRICS := true
-TARGET_USES_QMAA_OVERRIDE_SPCOM_UTEST := true
-TARGET_USES_QMAA_OVERRIDE_PERF := true
-TARGET_USES_QMAA_OVERRIDE_SENSORS := true
-TARGET_USES_QMAA_OVERRIDE_SYNX := true
-TARGET_USES_QMAA_OVERRIDE_SECUREMSM_TESTS := true
-TARGET_USES_QMAA_OVERRIDE_SOTER := true
-TARGET_USES_QMAA_OVERRIDE_REMOTE_EFS := true
-TARGET_USES_QMAA_OVERRIDE_TFTP := true
-TARGET_USES_QMAA_OVERRIDE_EID := true
-
-#Full QMAA HAL List
-QMAA_HAL_LIST := audio video camera display sensors gps
-
-ifeq ($(TARGET_USES_QMAA), true)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.confqmaa=true
-endif
-
-###########
-#QMAA flags ends
-
 #Suppot to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
-
-# Enable USB detection in QMAA mode
-ifeq ($(TARGET_USES_QMAA),true)
-ifeq ($(TARGET_USES_QMAA_RECOMMENDED_BOOT_CONFIG),true)
-PRODUCT_PACKAGES += init.qti.usb.qmaa.rc
-# Enable USB in adb-only configuration
-PRODUCT_PROPERTY_OVERRIDES += persist.vendor.usb.config=adb
-endif
-endif
 
 CLEAN_UP_JAVA_IN_VENDOR ?= enforcing
 
@@ -205,22 +126,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.beluga.s=0x900 \
     ro.vendor.beluga.t=0x240
 
-#----------------------------------------------------------------------
-# perf specific
-#----------------------------------------------------------------------
-ifeq ($(TARGET_USES_QMAA), true)
-    ifneq ($(TARGET_USES_QMAA_OVERRIDE_PERF), true)
-        TARGET_DISABLE_PERF_OPTIMIZATIONS := true
-    else
-        TARGET_DISABLE_PERF_OPTIMIZATIONS := false
-    endif
-else
-    TARGET_DISABLE_PERF_OPTIMIZATIONS := false
-endif
-# /* Disable perf opts */
-
-
-
 TARGET_USES_QCOM_BSP := false
 
 # RRO configuration
@@ -234,17 +139,6 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 QCOM_BOARD_PLATFORMS += taro
 
 TARGET_USES_QSSI := true
-
-###QMAA Indicator Start###
-
-#Full QMAA HAL List
-QMAA_HAL_LIST :=
-
-#Indicator for each enabled QMAA HAL for this target. Each tech team locally verified their QMAA HAL and ensure code is updated/merged, then add their HAL module name to QMAA_ENABLED_HAL_MODULES as an QMAA enabling completion indicator
-QMAA_ENABLED_HAL_MODULES :=
-QMAA_ENABLED_HAL_MODULES += sensors
-
-###QMAA Indicator End###
 
 #Default vendor image configuration
 ENABLE_VENDOR_IMAGE := true

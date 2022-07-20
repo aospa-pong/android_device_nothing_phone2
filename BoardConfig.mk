@@ -107,7 +107,6 @@ BOARD_KERNEL_CMDLINE := msm_geni_serial.con_enabled=0
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
-BOARD_RAMDISK_OFFSET     := 0x02000000
 
 #Enable dtb in boot image and boot image header version 3 support.
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true

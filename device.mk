@@ -99,11 +99,6 @@ TARGET_USES_QCOM_BSP := false
 # RRO configuration
 TARGET_USES_RRO := true
 
-###########
-# Target configurations
-
-QCOM_BOARD_PLATFORMS += taro
-
 TARGET_USES_QSSI := true
 
 #Default vendor image configuration

@@ -93,9 +93,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc
 
-# privapp-permissions whitelisting (To Fix CTS :privappPermissionsMustBeEnforced)
-PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=enforce
-
 TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 

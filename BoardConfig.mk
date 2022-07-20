@@ -34,9 +34,6 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # Firmware
 ADD_RADIO_FILES := false
 
-# ION
-TARGET_USES_NEW_ION_API := true
-
 # Kernel
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3
 BOARD_BOOT_HEADER_VERSION := 4

@@ -101,9 +101,6 @@ ifneq ($(AB_OTA_UPDATER),true)
 endif
 TARGET_USERIMAGES_USE_F2FS := true
 
-# SDK
-BOARD_SYSTEMSDK_VERSIONS := 32
-
 # UFS
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework

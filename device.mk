@@ -139,9 +139,6 @@ PRODUCT_PACKAGES += update_engine \
 PRODUCT_HOST_PACKAGES += \
     brillo_update_payload
 
-# Boot control HAL test app
-PRODUCT_PACKAGES_DEBUG += bootctl
-
 PRODUCT_PACKAGES += \
   update_engine_sideload
 

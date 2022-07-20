@@ -30,8 +30,6 @@ BOARD_RAMDISK_USE_LZ4 := true
 
 SECTOOLS_SECURITY_PROFILE := $(QCPATH)/securemsm/security_profiles/waipio_tz_security_profile.xml $(QCPATH)/securemsm/security_profiles/fillmore_tz_security_profile.xml $(QCPATH)/securemsm/security_profiles/cape_tz_security_profile.xml
 
-USE_OPENGL_RENDERER := true
-
 # TODO: Enable it back when we have a path forward
 # Disable generation of dtbo.img
 BOARD_KERNEL_SEPARATED_DTBO := false

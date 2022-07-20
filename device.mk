@@ -68,7 +68,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc
 
-TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 TARGET_USES_QCOM_BSP := false

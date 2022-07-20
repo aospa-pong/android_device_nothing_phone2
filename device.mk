@@ -108,8 +108,6 @@ TARGET_USES_QCOM_BSP := false
 # RRO configuration
 TARGET_USES_RRO := true
 
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
 ###########
 # Target configurations
 

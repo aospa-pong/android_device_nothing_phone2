@@ -95,9 +95,6 @@ PRODUCT_PACKAGES += update_engine \
     android.hardware.boot@1.2-impl-qti.recovery \
     android.hardware.boot@1.2-service
 
-PRODUCT_HOST_PACKAGES += \
-    brillo_update_payload
-
 PRODUCT_PACKAGES += \
   update_engine_sideload
 

@@ -126,8 +126,6 @@ DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 KERNEL_MODULES_INSTALL := dlkm
 KERNEL_MODULES_OUT := out/target/product/$(PRODUCT_NAME)/$(KERNEL_MODULES_INSTALL)/lib/modules
 
-USE_LIB_PROCESS_GROUP := true
-
 #Enable full treble flag
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_VENDOR_MOVE_ENABLED := true

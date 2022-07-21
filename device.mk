@@ -163,8 +163,6 @@ TARGET_MOUNT_POINTS_SYMLINKS := false
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
 
-PRODUCT_ENABLE_QESDK := true
-
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \

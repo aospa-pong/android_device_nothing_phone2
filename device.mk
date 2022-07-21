@@ -72,7 +72,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 BOARD_FRP_PARTITION_NAME := frp
 
 PRODUCT_PACKAGES += fs_config_files
-PRODUCT_PACKAGES += gpio-keys.kl
 
 # A/B related packages
 PRODUCT_PACKAGES += update_engine \

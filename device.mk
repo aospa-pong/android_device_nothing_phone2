@@ -11,9 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Enable debugfs restrictions
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
-#Enable vm support
-TARGET_ENABLE_VM_SUPPORT := true
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Set GRF/Vendor freeze properties
@@ -272,13 +269,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
-
-# ODM ueventd.rc
-# - only for use with VM support right now
-ifeq ($(TARGET_ENABLE_VM_SUPPORT),true)
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/ueventd-odm.rc:$(TARGET_COPY_OUT_ODM)/ueventd.rc
-PRODUCT_PACKAGES += vmmgr vmmgr.rc vmmgr.conf
-endif
 
 ##Armv9-Tests##
 PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \

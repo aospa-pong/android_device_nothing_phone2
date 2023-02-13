@@ -101,7 +101,6 @@ KERNEL_MODULES_OUT := out/target/product/$(PRODUCT_NAME)/$(KERNEL_MODULES_INSTAL
 
 # Manifests
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest_cape.xml
-DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true

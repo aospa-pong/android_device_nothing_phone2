@@ -214,6 +214,10 @@ PRODUCT_PACKAGES += \
     qrtr-lookup \
     libqrtr
 
+# Powershare
+PRODUCT_PACKAGES += \
+    vendor.aospa.powershare-service
+
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \

@@ -130,6 +130,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.nt.rc \
     init.target.rc
 
 # Kernel

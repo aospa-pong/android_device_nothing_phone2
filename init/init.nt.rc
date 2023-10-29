@@ -1,0 +1,3 @@
+on boot
+    # Fingerprint
+    chown system system /dev/goodix_fp

@@ -114,7 +114,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="carrier_allow_transfer_ims_call_bool" value="true" />
         <long name="carrier_data_call_apn_retry_after_disconnect_long" value="100" />
         <!-- Config to enable the example android location attribution app by default -->
-        <string name="gps.nfw_proxy_apps">com.example.android.locationattribution</string>
+        <string name="gps.nfw_proxy_apps">com.google.android.carrierlocation</string>
         <boolean name="carrier_cross_sim_ims_available_bool" value="true" />
         <!-- Config for B2C Enriched Calls Feature support -->
         <boolean name="carrier_b2c_enriched_calling_supported_bool" value="false"/>

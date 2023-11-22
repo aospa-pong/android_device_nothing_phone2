@@ -168,6 +168,13 @@ NEED_AIDL_NDK_PLATFORM_BACKEND := true
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
 
+# Nothing Frameworks
+PRODUCT_BOOT_JARS += \
+    nothing-fwk
+
+PRODUCT_PACKAGES += \
+    nothing-fwk
+
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

@@ -1,3 +1,4 @@
+DEVICE_PATH := device/nothing/phone2
 TARGET_BOARD_PLATFORM := taro
 TARGET_BOOTLOADER_BOARD_NAME := taro
 
@@ -218,13 +219,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.beluga.s=0x900 \
     ro.vendor.beluga.t=0x240
 
-###########
-# Target naming
-PRODUCT_NAME := taro
-PRODUCT_DEVICE := taro
-PRODUCT_BRAND := qti
-PRODUCT_MODEL := Taro for arm64
-
 #----------------------------------------------------------------------
 # wlan specific
 #----------------------------------------------------------------------
@@ -357,7 +351,7 @@ PRODUCT_PACKAGES += vendor.qti.camera.provider@2.6-service_64
 # Macro allows Camera module to use new service
 QTI_CAMERA_PROVIDER_SERVICE := 2.7
 
-DEVICE_FRAMEWORK_MANIFEST_FILE := device/qcom/taro/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 
 # Enable compilation of image_generation_tool
 TARGET_USES_IMAGE_GEN_TOOL := true
@@ -366,10 +360,10 @@ TARGET_USES_IMAGE_GEN_TOOL := true
 # Add vintf device manifests for chipsets in taro QCV family below.
 TARGET_USES_QCV := true
 DEVICE_MANIFEST_SKUS := taro diwali cape ukee
-DEVICE_MANIFEST_TARO_FILES := device/qcom/taro/manifest_taro.xml
-DEVICE_MANIFEST_DIWALI_FILES := device/qcom/taro/manifest_diwali.xml
-DEVICE_MANIFEST_CAPE_FILES := device/qcom/taro/manifest_cape.xml
-DEVICE_MANIFEST_UKEE_FILES := device/qcom/taro/manifest_ukee.xml
+DEVICE_MANIFEST_TARO_FILES := $(DEVICE_PATH)/manifest_taro.xml
+DEVICE_MANIFEST_DIWALI_FILES := $(DEVICE_PATH)/manifest_diwali.xml
+DEVICE_MANIFEST_CAPE_FILES := $(DEVICE_PATH)/manifest_cape.xml
+DEVICE_MANIFEST_UKEE_FILES := $(DEVICE_PATH)/manifest_ukee.xml
 
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 

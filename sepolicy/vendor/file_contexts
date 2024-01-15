@@ -3,6 +3,9 @@
 /mnt/vendor/persist/goodix(/.*)?                                                                   u:object_r:vendor_persist_goodix_file:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.nothing                    u:object_r:hal_fingerprint_default_exec:s0
 
+# LEDs
+/sys/devices/platform/soc/994000.i2c/i2c-0/0-003a/leds/led_strips(/.*)?                            u:object_r:sysfs_leds:s0
+
 # NFC
 /dev/pn553                                                                                         u:object_r:nfc_device:s0
 /vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                                           u:object_r:hal_nfc_default_exec:s0

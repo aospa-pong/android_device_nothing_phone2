@@ -37,14 +37,10 @@ BOARD_KERNEL_SEPARATED_DTBO := false
 
 ### Dynamic partition Handling
 # Define the Dynamic Partition sizes and groups.
-ifeq ($(ENABLE_AB), true)
-    ifeq ($(ENABLE_VIRTUAL_AB), true)
-        BOARD_SUPER_PARTITION_SIZE := 6442450944
-    else
-        BOARD_SUPER_PARTITION_SIZE := 12884901888
-    endif
+ifeq ($(ENABLE_VIRTUAL_AB), true)
+    BOARD_SUPER_PARTITION_SIZE := 6442450944
 else
-        BOARD_SUPER_PARTITION_SIZE := 6442450944
+    BOARD_SUPER_PARTITION_SIZE := 12884901888
 endif
 ifeq ($(BOARD_KERNEL_SEPARATED_DTBO),true)
     # Enable DTBO for recovery image
@@ -57,25 +53,15 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x06400000
 
 TARGET_COPY_OUT_ODM := odm
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-ifeq ($(ENABLE_AB), true)
 ifeq ($(BOARD_AVB_ENABLE),true)
 AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor vendor_dlkm odm dtbo vbmeta
-else
-AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor vendor_dlkm odm dtbo
-endif
 endif
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 
-ifeq ($(ENABLE_AB), true)
 TARGET_NO_RECOVERY := true
 # Defines for enabling A/B builds
 AB_OTA_UPDATER := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
-else
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_non_AB.fstab
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-endif
 
 ifeq ($(BOARD_AVB_ENABLE), true)
     BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem

@@ -40,20 +40,12 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.qcom
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
-ifeq ($(ENABLE_AB), true)
-    LOCAL_SRC_FILES := fstab.qcom
-else
-    LOCAL_SRC_FILES := fstab_non_AB.qcom
-endif
+LOCAL_SRC_FILES := fstab.qcom
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-ifeq ($(ENABLE_AB), true)
-    LOCAL_MODULE       := charger_fw_fstab.qti
-else
-    LOCAL_MODULE       := charger_fw_fstab_non_AB.qti
-endif
+LOCAL_MODULE       := charger_fw_fstab.qti
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := charger_fw_fstab.qti

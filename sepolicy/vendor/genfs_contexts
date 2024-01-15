@@ -12,6 +12,7 @@ genfscon sysfs /devices/platform/goodix_ts.0/single_tap             u:object_r:v
 
 # PowerShare
 genfscon sysfs /class/qcom-battery/wireless_boost_en                u:object_r:sysfs_powershare:s0
+genfscon sysfs /class/qcom-battery/wls_reverse_status               u:object_r:sysfs_powershare:s0
 
 # Vibrator
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-3/3-005a/leds/vibrator   u:object_r:sysfs_vibrator:s0

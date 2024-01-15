@@ -206,19 +206,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.beluga.t=0x240
 
 #----------------------------------------------------------------------
-# wlan specific
-#----------------------------------------------------------------------
-ifeq ($(TARGET_USES_QMAA), true)
-ifneq ($(TARGET_USES_QMAA_OVERRIDE_WLAN), true)
-include device/qcom/wlan/default/wlan.mk
-else
-include device/qcom/wlan/taro/wlan.mk
-endif
-else
-include device/qcom/wlan/taro/wlan.mk
-endif
-
-#----------------------------------------------------------------------
 # perf specific
 #----------------------------------------------------------------------
 ifeq ($(TARGET_USES_QMAA), true)

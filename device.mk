@@ -17,10 +17,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 BOARD_SHIPPING_API_LEVEL := 31
 BOARD_API_LEVEL := 31
 
-# Set SoC manufacturer property
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.soc.manufacturer=QTI
-
 PRODUCT_BUILD_SYSTEM_IMAGE := true
 PRODUCT_BUILD_SYSTEM_OTHER_IMAGE := false
 PRODUCT_BUILD_VENDOR_IMAGE := true
@@ -87,13 +83,6 @@ PRODUCT_PACKAGES += \
 TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# beluga settings
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.beluga.p=0x3 \
-    ro.vendor.beluga.c=0x4800 \
-    ro.vendor.beluga.s=0x900 \
-    ro.vendor.beluga.t=0x240
-
 TARGET_USES_QCOM_BSP := false
 
 # RRO configuration
@@ -125,10 +114,6 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES += \
   update_engine_sideload
-
-# Enable incremental fs
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.incremental.enable=yes
 
 # QRTR related packages
 PRODUCT_PACKAGES += qrtr-ns
@@ -209,13 +194,6 @@ TARGET_MOUNT_POINTS_SYMLINKS := false
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
 
-# system prop for enabling QFS (QTI Fingerprint Solution)
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qfp=true
-#target specific runtime prop for qspm
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qspm.enable=true
-
 #FEATURE_OPENGLES_EXTENSION_PACK support string config file
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
@@ -242,23 +220,9 @@ TARGET_COMMON_QTI_COMPONENTS := \
     wfd \
     wlan
 
-# Vendor property to enable advanced network scanning
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.enableadvancedscan=true
-
-# Enable Fuse Passthrough
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
-
 ##Armv9-Tests##
 PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \
                           pac_test \
                           mte_tests \
                           dynamic_memcpy_prebuilt
 ##Armv9-Tests##
-
-# Mediaserver 64 Bit enable
-PRODUCT_VENDOR_PROPERTIES+= \
-     ro.mediaserver.64b.enable=true
-
-# GPU Profiler support
-PRODUCT_VENDOR_PROPERTIES += graphics.gpu.profiler.support=true

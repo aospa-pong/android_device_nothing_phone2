@@ -60,7 +60,7 @@ BOARD_EXT4_SHARE_DUP_BLOCKS := true
 TARGET_NO_RECOVERY := true
 # Defines for enabling A/B builds
 AB_OTA_UPDATER := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 
 ifeq ($(BOARD_AVB_ENABLE), true)
     BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem

@@ -37,11 +37,7 @@ PRODUCT_BUILD_USERDATA_IMAGE := true
 BOARD_AVB_ENABLE := true
 
 # Disable verified boot checks in abl if AVB is not enabled
-ifeq ($(BOARD_AVB_ENABLE), true)
 BOARD_ABL_SIMPLE := false
-else
-BOARD_ABL_SIMPLE := true
-endif
 
 #Suppot to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true

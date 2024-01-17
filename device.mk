@@ -124,6 +124,10 @@ TARGET_USES_QSSI := true
 # RRO configuration
 TARGET_USES_RRO := true
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
 

@@ -158,10 +158,3 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wfd \
     wlan
-
-##Armv9-Tests##
-PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \
-                          pac_test \
-                          mte_tests \
-                          dynamic_memcpy_prebuilt
-##Armv9-Tests##

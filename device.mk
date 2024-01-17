@@ -26,17 +26,6 @@ BOARD_ABL_SIMPLE := false
 #Suppot to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 
-CLEAN_UP_JAVA_IN_VENDOR ?= enforcing
-
-JAVA_IN_VENDOR_SOONG_WHITE_LIST :=\
-CuttlefishService\
-pasrservice\
-VendorPrivAppPermissionTest\
-
-JAVA_IN_VENDOR_MAKE_WHITE_LIST :=\
-AEye\
-SnapdragonCamera\
-
 SHIPPING_API_LEVEL := 32
 PRODUCT_SHIPPING_API_LEVEL := 32
 

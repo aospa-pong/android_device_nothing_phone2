@@ -1,8 +1,55 @@
-# Fuse Passthrough
+# Audio
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
+ro.vendor.audio.downmix.attenuation=1
+
+# Bluetooth
+bluetooth.profile.bap.broadcast.assist.enabled=true
+bluetooth.profile.bap.unicast.server.enabled=true
+bluetooth.profile.bas.client.enabled=true
+bluetooth.profile.csip.set_coordinator.enabled=true
+bluetooth.profile.hap.client.enabled=true
+bluetooth.profile.mcp.server.enabled=true
+bluetooth.profile.tbs.server.enabled=true
+bluetooth.profile.vc.server.enabled=true
+persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
+persist.vendor.btstack.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
+persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
+
+# Display
+vendor.display.disable_noise_layer=1
+vendor.display.disable_spec_fence=1
+vendor.display.disable_system_load_check=1
+vendor.display.enable_async_powermode=0
+vendor.display.use_layer_ext=1
+
+# DPM
+persist.vendor.dpm.vndr.feature=11
+persist.vendor.dpm.vndr.halservice.enable=1
+persist.vendor.dpm.vndr.idletimer.mode=default
+persist.vendor.dpm.vndr.tcm=2
+
+# DRM
+drm.service.enabled=true
+
+# FUSE
 persist.sys.fuse.passthrough.enable=true
 
-# GPU Profiler support
-graphics.gpu.profiler.support=true
+# Gatekeeper
+vendor.gatekeeper.disable_spu=true
 
-# Incremental fs
+# Incremental FS
 ro.incremental.enable=yes
+
+# Keystore
+ro.hardware.keystore_desede=true
+
+# Media
+debug.stagefright.c2inputsurface=-1
+
+# Netflix
+ro.netflix.bsp_rev=Q8450-34634-1
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true

@@ -242,3 +242,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
     vendor.qti.hardware.systemhelper@1.0.vendor
+
+# Vendor Makefile
+$(call inherit-product, vendor/nothing/phone2/phone2-vendor.mk)

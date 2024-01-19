@@ -1,0 +1,13 @@
+# Audio
+persist.vendor.audio.fluence.voicerec=true
+persist.vendor.audio.spv4.enable=false
+persist.vendor.audio.vbat.enabled=false
+ro.audio.monitorRotation=true
+ro.vendor.audio.sdk.fluencetype=fluence
+
+# Bluetooth
+persist.vendor.bluetooth.modem_nv_support=true
+
+# Display
+vendor.display.enable_rounded_corner=0
+vendor.display.vds_allow_hwc=1

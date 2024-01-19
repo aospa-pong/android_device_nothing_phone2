@@ -1,0 +1,8 @@
+# Bluetooth
+persist.bluetooth.bqr.event_mask=0x8000000E
+persist.bluetooth.bqr.min_interval_ms=6000
+
+# Netmgr
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.vendor.data.mode=concurrent

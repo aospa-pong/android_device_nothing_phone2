@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    aaptflags: ["--keep-raw-values"],
+    name: "NTCarrierConfig",
+    product_specific: true,
+}

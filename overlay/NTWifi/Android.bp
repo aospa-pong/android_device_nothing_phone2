@@ -1,0 +1,10 @@
+runtime_resource_overlay {
+    name: "NTWifiResTarget",
+    vendor: true,
+}
+
+runtime_resource_overlay {
+    name: "NTWifiResTargetMainline",
+    manifest: "AndroidGoogleManifest.xml",
+    vendor: true,
+}

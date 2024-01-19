@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "NTSettingsProvider",
+    product_specific: true,
+}

@@ -101,6 +101,9 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # GPS
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+
 PRODUCT_PACKAGES += \
     android.hardware.gnss-V1-ndk_platform.vendor
 

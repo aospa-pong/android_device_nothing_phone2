@@ -26,6 +26,7 @@
         <!-- Allow VoLTE and WFC by default -->
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="001" mnc="01">
         <boolean name="call_barring_visibility_bool" value="true" />

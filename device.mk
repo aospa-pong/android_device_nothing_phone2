@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor
 
 # Manifests
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest_cape.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest_cape.xml
 
 # Media
 PRODUCT_PACKAGES += \

@@ -126,7 +126,7 @@ PRODUCT_PACKAGES += \
     init.target.rc
 
 # Kernel
-TARGET_HAS_GENERIC_KERNEL_HEADERS := true
+KERNEL_PREBUILT_DIR := $(DEVICE_PATH)-kernel
 
 # Keymaster
 PRODUCT_COPY_FILES += \

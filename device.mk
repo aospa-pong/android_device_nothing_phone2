@@ -159,7 +159,9 @@ PRODUCT_PACKAGES += \
 
 # Manifests
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/phone2_vendor_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest_cape.xml
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/configs/vintf/manifest_cape.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest_phone2.xml
 
 # Media
 PRODUCT_PACKAGES += \

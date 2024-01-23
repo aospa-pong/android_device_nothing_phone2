@@ -25,6 +25,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service
 
 PRODUCT_PACKAGES += \
+    checkpoint_gc \
+    otapreopt_script \
     update_engine_sideload
 
 # AAPT

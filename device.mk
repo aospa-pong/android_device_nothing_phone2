@@ -123,9 +123,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.identity-V3-ndk_platform.vendor
 
-# Image Generation Tool
-TARGET_USES_IMAGE_GEN_TOOL := true
-
 # Init
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom

@@ -43,6 +43,10 @@ SHIPPING_API_LEVEL := 32
 TARGET_BOARD_PLATFORM := taro
 TARGET_BOOTLOADER_BOARD_NAME := taro
 
+# Authsecret
+PRODUCT_PACKAGES += \
+    android.hardware.authsecret@1.0.vendor
+
 # AVB
 BOARD_AVB_ENABLE := true
 
@@ -84,7 +88,7 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey \
+    android.hardware.drm-service.clearkey \
     android.hardware.drm@1.4.vendor
 
 # Emulated Storage
@@ -136,7 +140,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor \
     android.hardware.hardware_keystore.xml \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster_messages.vendor
@@ -161,9 +164,6 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
     libsfplugin_ccodec_utils.vendor
-
-# NDK
-NEED_AIDL_NDK_PLATFORM_BACKEND := true
 
 # Net
 PRODUCT_PACKAGES += \

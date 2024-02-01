@@ -194,6 +194,10 @@ PRODUCT_PACKAGES += \
     WifiResTargetMainline_cape \
     WifiResTargetMainline_spf
 
+# Paranoid Glyph
+PRODUCT_PACKAGES += \
+    ParanoidGlyphPhone2
+
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

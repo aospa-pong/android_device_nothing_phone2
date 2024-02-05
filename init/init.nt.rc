@@ -19,3 +19,23 @@ on boot
     chmod 0666 /sys/devices/platform/soc/994000.i2c/i2c-0/0-003a/leds/led_strips/operating_mode
     chown system system /sys/devices/platform/soc/994000.i2c/i2c-0/0-003a/leds/led_strips/single_brightness
     chmod 0666 /sys/devices/platform/soc/994000.i2c/i2c-0/0-003a/leds/led_strips/single_brightness
+
+on post-fs-data
+    # Enable WLAN SSR
+    write /sys/kernel/cnss/recovery 1
+
+    # Camera
+    mkdir /data/vendor/camera 0775 camera camera
+    copy /mnt/vendor/persist/camera/bokeh_caldata_uw_persist.bin /data/vendor/camera/bokeh_caldata_uw_persist.bin
+    chmod 0444 /data/vendor/camera/bokeh_caldata_uw_persist.bin
+    chown cameraserver audio /data/vendor/camera/bokeh_caldata_uw_persist.bin
+    copy /mnt/vendor/persist/camera/ois_caldata_wide_persist.bin /data/vendor/camera/ois_caldata_wide_persist.bin
+    chmod 0444 /data/vendor/camera/ois_caldata_wide_persist.bin
+    chown cameraserver audio /data/vendor/camera/ois_caldata_wide_persist.bin
+
+on property:sys.boot_completed=1
+    # Wireless Charging
+    chown system system /sys/class/qcom-battery/wireless_boost_en
+    chmod 0666 /sys/class/qcom-battery/wireless_boost_en
+    chown system system /sys/class/qcom-battery/wls_reverse_status
+    chmod 0666 /sys/class/qcom-battery/wls_reverse_status

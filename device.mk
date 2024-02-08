@@ -229,9 +229,6 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
-# Partitions - FRP
-BOARD_FRP_PARTITION_NAME := frp
-
 # Partitions - Vendor
 ENABLE_VENDOR_IMAGE := true
 

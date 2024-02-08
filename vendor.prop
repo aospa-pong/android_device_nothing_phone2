@@ -33,6 +33,9 @@ persist.vendor.dpm.vndr.tcm=2
 # DRM
 drm.service.enabled=true
 
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 

@@ -1,0 +1,1 @@
+binder_call(hal_camera_default, vendor_hal_qspmhal_default)

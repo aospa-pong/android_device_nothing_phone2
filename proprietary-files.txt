@@ -1784,7 +1784,6 @@ vendor/lib64/libtrustedapploader.so
 vendor/lib64/libwvhidl.so
 
 # WiFi (Configs)
-vendor/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/icm.conf
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml

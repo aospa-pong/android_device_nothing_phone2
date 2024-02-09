@@ -312,5 +312,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-V2-ndk_platform.vendor
 
+# WLAN
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
+
 # Vendor Makefile
 $(call inherit-product, vendor/nothing/phone2/phone2-vendor.mk)

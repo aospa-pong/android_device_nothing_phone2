@@ -61,6 +61,9 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 
+# Kernel Modules
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/vendor_ramdisk/modules.load.recovery))
+
 # Partitions - A/B
 AB_OTA_PARTITIONS += \
     boot \
@@ -132,6 +135,16 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
+
+# WLAN
+BOARD_HAS_QCOM_WLAN := true
+PRODUCT_VENDOR_MOVE_ENABLED := true
+TARGET_WLAN_CHIP := qca6490
+WIFI_DRIVER_BUILT := qca_cld3
+WIFI_DRIVER_DEFAULT := qca_cld3
+WIFI_DRIVER_INSTALL_TO_KERNEL_OUT := true
+
+include device/qcom/wlan/taro/BoardConfigWlan.mk
 
 # Vendor BoardConfig
 include vendor/nothing/phone2/BoardConfigVendor.mk

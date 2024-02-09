@@ -66,6 +66,11 @@ PRODUCT_PACKAGES += \
 TARGET_USES_FOD_ZPOS := true
 
 # Camera
+$(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/libraries/public.libraries.system_ext.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries.txt
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \

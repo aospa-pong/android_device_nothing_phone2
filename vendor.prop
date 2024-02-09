@@ -18,6 +18,10 @@ persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 
 # Display
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
+ro.surface_flinger.set_display_power_timer_ms=1000
+ro.surface_flinger.set_idle_timer_ms=80
+ro.surface_flinger.set_touch_timer_ms=200
 vendor.display.disable_noise_layer=1
 vendor.display.disable_spec_fence=1
 vendor.display.disable_system_load_check=1

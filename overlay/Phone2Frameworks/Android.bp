@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "Phone2Frameworks",
+    product_specific: true,
+}

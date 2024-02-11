@@ -175,6 +175,14 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     nothing-fwk
 
+# Overlays
+PRODUCT_PACKAGES += \
+    Phone2Frameworks \
+    Phone2Nfc \
+    Phone2Settings \
+    Phone2SettingsProvider \
+    Phone2SystemUI
+
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

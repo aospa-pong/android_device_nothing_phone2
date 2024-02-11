@@ -177,6 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    Phone2CarrierConfig \
     Phone2Frameworks \
     Phone2Nfc \
     Phone2Settings \

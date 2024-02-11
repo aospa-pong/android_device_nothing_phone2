@@ -182,7 +182,9 @@ PRODUCT_PACKAGES += \
     Phone2Nfc \
     Phone2Settings \
     Phone2SettingsProvider \
-    Phone2SystemUI
+    Phone2SystemUI \
+    WifiResTarget \
+    WifiResTargetMainline
 
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true

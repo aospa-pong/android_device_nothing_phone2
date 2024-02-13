@@ -6,5 +6,7 @@
         android:isStatic="true"
         android:priority="750"
         android:targetName="WifiCustomization"
-        android:targetPackage="com.android.wifi.resources" />
+        android:targetPackage="com.android.wifi.resources"
+        android:requiredSystemPropertyName="ro.boot.product.vendor.sku"
+        android:requiredSystemPropertyValue="cape"/>
 </manifest>

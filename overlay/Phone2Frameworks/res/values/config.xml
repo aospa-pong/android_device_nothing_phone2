@@ -30,6 +30,15 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>4</item>
+        <item>40</item>
+        <item>350</item>
+        <item>600</item>
+        <item>1000</item>
+        <item>1600</item>
+        <item>3000</item>
+        <item>6000</item> <!-- Minimum lux for HBM -->
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the lux values
@@ -38,7 +47,26 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>14</item>   <!-- 0-1 -->
+        <item>28</item>   <!-- 1-4 -->
+        <item>72</item>   <!-- 4-40 -->
+        <item>98</item>   <!-- 40-350 -->
+        <item>140</item>  <!-- 350-600 -->
+        <item>167</item>  <!-- 600-1000 -->
+        <item>204</item>  <!-- 1000-1600 -->
+        <item>240</item>  <!-- 1600-3000 -->
+        <item>254</item>  <!-- 3000-6000 -->
+        <item>255</item>  <!-- 6000+ -->
     </integer-array>
+
+    <!-- Slow brightness animation ramp rate in brightness units per second-->
+    <integer translatable="false" name="config_brightness_ramp_rate_slow">50</integer>
+    
+    <!-- Fast brightness animation ramp rate in brightness units per second-->
+    <integer translatable="false" name="config_brightness_ramp_rate_fast">200</integer>
+    
+    <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
+    <integer name="config_autoBrightnessLightSensorRate">50</integer>
 
     <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
          percent. The length of this array is assumed to be one greater than

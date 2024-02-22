@@ -8,7 +8,7 @@
             <nits>2.0</nits>
         </point>
         <point>
-            <value>0.858154296875</value>
+            <value>0.8615196078431</value>
             <nits>498.0</nits>
         </point>
         <point>
@@ -19,7 +19,7 @@
     <!-- root node for HBM-->
     <highBrightnessMode enabled="true">
         <!-- Transition point brightness from normal to HBM mode -->
-        <transitionPoint>0.858154296875</transitionPoint>
+        <transitionPoint>0.8615196078431</transitionPoint>
         <!-- Minimum lux to enter HBM -->
         <minimumLux>6001</minimumLux>
         <!-- Time limitation for HBM-->

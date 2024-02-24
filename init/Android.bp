@@ -17,3 +17,10 @@ prebuilt_etc {
     sub_dir: "init/hw",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "ueventd.phone2.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.phone2.rc",
+    device_specific: true,
+}

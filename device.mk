@@ -138,7 +138,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.nt.rc \
-    init.target.rc
+    init.target.rc \
+    ueventd.phone2.rc
 
 # Kernel
 KERNEL_PREBUILT_DIR := $(DEVICE_PATH)-kernel
@@ -161,6 +162,10 @@ PRODUCT_PACKAGES += \
     android.hardware.security.rkp-V3-ndk.vendor \
     android.hardware.security.secureclock-V1-ndk_platform.vendor \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor
+
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # Manifests
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/phone2_vendor_framework_compatibility_matrix.xml

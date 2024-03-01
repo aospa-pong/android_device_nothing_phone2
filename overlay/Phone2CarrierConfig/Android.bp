@@ -1,5 +1,5 @@
 runtime_resource_overlay {
     aaptflags: ["--keep-raw-values"],
     name: "Phone2CarrierConfig",
-    product_specific: true,
+    device_specific: true,
 }

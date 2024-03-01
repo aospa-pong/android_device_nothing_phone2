@@ -211,11 +211,7 @@ PRODUCT_PACKAGES += \
     Phone2Nfc \
     Phone2Settings \
     Phone2SettingsProvider \
-    Phone2SystemUI \
-    WifiResTarget_cape \
-    WifiResTarget_spf \
-    WifiResTargetMainline_cape \
-    WifiResTargetMainline_spf
+    Phone2SystemUI
 
 # Paranoid Glyph
 PRODUCT_PACKAGES += \

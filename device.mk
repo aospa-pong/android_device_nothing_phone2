@@ -143,7 +143,6 @@ PRODUCT_PACKAGES += \
     ueventd.phone2.rc
 
 # Kernel
-KERNEL_PREBUILT_DIR := $(DEVICE_PATH)-kernel
 
 # Keymaster
 PRODUCT_COPY_FILES += \
